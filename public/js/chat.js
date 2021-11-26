@@ -13,6 +13,7 @@ const messageTemplate = document.querySelector('#message-template').innerHTML
 const locationTemplate = document.querySelector('#location-template').innerHTML
 const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
 const userMessageTemplate = document.querySelector('#user-message-template').innerHTML
+const userLocationTemplate = document.querySelector('#user-location-template').innerHTML
 
 // Options
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
@@ -70,13 +71,23 @@ socket.on('roomData', ({room, users}) => {
 })
 
 socket.on('locationMessage', (url) => {
-    console.log("My location: ", url)
-    const html = Mustache.render(locationTemplate, {
-        username: url.username,
-        url : url.url,
-        createdAt: moment(url.createdAt).format('h:mm a')
-    })
-    messages.insertAdjacentHTML('beforeend', html)
+
+    if (url.username == username.toLowerCase()) {
+        const html = Mustache.render(userLocationTemplate, {
+            username: url.username,
+            url : url.url,
+            createdAt: moment(url.createdAt).format('h:mm a')
+        })
+        messages.insertAdjacentHTML('beforeend', html)
+    } else {
+        const html = Mustache.render(locationTemplate, {
+            username: url.username,
+            url : url.url,
+            createdAt: moment(url.createdAt).format('h:mm a')
+        })
+        messages.insertAdjacentHTML('beforeend', html)
+    }
+
     autoScroll()
 })
 
