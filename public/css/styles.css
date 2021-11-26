@@ -119,6 +119,8 @@ button:disabled {
 
 .chat {
   display: flex;
+  height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .chat__sidebar {
@@ -282,8 +284,5 @@ button:disabled {
   }
   #sidebarCollapse.active span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
-  }
-  .chat {
-    height: auto !important;
   }
 }
