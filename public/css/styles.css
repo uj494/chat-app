@@ -167,15 +167,35 @@ button:disabled {
   float: left;
 }
 
+.user_message {
+  margin-bottom: 16px;
+  background-color: DodgerBlue;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  border-radius: 10px;
+  display: block;
+  clear: both;
+  float: right;
+}
+
+.user_message .message__meta {
+  color: white;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
 .message__name {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   margin-right: 8px;
 }
 
-.message__meta {
+.message .message__meta {
   color: #777;
-  font-size: 14px;
+  font-size: 12px;
+  margin-left: 20px;
 }
 
 .message a {

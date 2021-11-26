@@ -29,7 +29,7 @@
                         <button class="btn btn-primary">Send</button>
                     </form>
                     <br>
-                    <button id="send-location" class="btn btn-primary">Send location</button>
+                    <button id="send-location" class="btn btn-light">Send location</button>
                 </div>
             </div>
         </div>
@@ -38,6 +38,15 @@
 
         <script id="message-template" type="text/html">
             <div class="message">
+                <p>
+                    <span class="message__name">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p>{{message}}</p>
+            </div>
+        </script>
+        <script id="user-message-template" type="text/html">
+            <div class="user_message">
                 <p>
                     <span class="message__name">{{username}}</span>
                     <span class="message__meta">{{createdAt}}</span>

@@ -12,6 +12,7 @@ const messages = document.querySelector('#messages')
 const messageTemplate = document.querySelector('#message-template').innerHTML
 const locationTemplate = document.querySelector('#location-template').innerHTML
 const sidebarTemplate = document.querySelector('#sidebar-template').innerHTML
+const userMessageTemplate = document.querySelector('#user-message-template').innerHTML
 
 // Options
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
@@ -41,12 +42,22 @@ const autoScroll = () => {
 
 socket.on('message', (message) => {
     console.log("New message: ", text)
-    const html = Mustache.render(messageTemplate, {
-        username: message.username,
-        message: message.text,
-        createdAt: moment(message.createdAt).format('h:mm a') 
-    })
-    messages.insertAdjacentHTML('beforeend', html)
+
+    if (message.username == username.toLowerCase()) {
+        const html = Mustache.render(userMessageTemplate, {
+            username: message.username,
+            message: message.text,
+            createdAt: moment(message.createdAt).format('h:mm a') 
+        })
+        messages.insertAdjacentHTML('beforeend', html)
+    } else {
+        const html = Mustache.render(messageTemplate, {
+            username: message.username,
+            message: message.text,
+            createdAt: moment(message.createdAt).format('h:mm a') 
+        })
+        messages.insertAdjacentHTML('beforeend', html)
+    }
     autoScroll()
 })
 
@@ -80,7 +91,6 @@ messageForm.addEventListener('submit', (e) => {
         //messageFormButton.removeAttribute('disabled')
         messageFormInput.value = ''
         messageFormInput.focus()
-        console.log(message)
     })
 })
 
