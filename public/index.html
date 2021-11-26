@@ -2,20 +2,39 @@
 <html>
     <head>
         <title>Chat App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/util.css">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
         <link rel="icon" href="/img/favicon.png">
-        <link rel="stylesheet" href="/css/styles.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
-        <div class="centered-form">
-            <div class="centered-form__box">
-                <h1>Chat Room</h1>
-                <form action="./chat.html">
-                    <label>Display Name</label>
-                    <input type="text" name="username" placeholder="Display Name" required>
-                    <label>Room</label>
-                    <input type="text" name="room" placeholder="Room" required>
-                    <button>Join</button>
-                </form>
+        <div class="limiter">
+            <div class="container-login100" style="background-image: url('/img/bg-03.jpg');">
+                <div class="wrap-login100 p-t-30 p-b-50">
+                    <span class="login100-form-title p-b-41">
+                        Chat Room
+                    </span>
+                    <form class="login100-form validate-form p-b-33 p-t-5" action="./chat.html">
+    
+                        <div class="wrap-input100 validate-input" data-validate = "Enter display name">
+                            <input class="input100" type="text" name="username" placeholder="Display name">
+                            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        </div>
+    
+                        <div class="wrap-input100 validate-input" data-validate="Enter room name">
+                            <input class="input100" type="text" name="room" placeholder="Room">
+                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        </div>
+    
+                        <div class="container-login100-form-btn m-t-32">
+                            <button class="login100-form-btn">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
