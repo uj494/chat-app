@@ -165,7 +165,7 @@ button:disabled {
   display: block;
   clear: both;
   float: left;
-  inline-size: 250px;
+  max-inline-size: 250px;
   overflow-wrap: break-word;
 }
 
@@ -180,7 +180,7 @@ button:disabled {
   display: block;
   clear: both;
   float: right;
-  inline-size: 250px;
+  max-inline-size: 250px;
   overflow-wrap: break-word;
 }
 
