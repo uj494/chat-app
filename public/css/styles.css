@@ -18,6 +18,10 @@ body {
   line-height: 1.4;
   color: #333333;
   font-family: Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
@@ -123,7 +127,6 @@ button:disabled {
 
 .chat__sidebar {
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   color: white;
   background: #333744;
   width: 190px;
@@ -283,10 +286,5 @@ button:disabled {
   }
   #sidebarCollapse.active span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
-  }
-
-  .chat__sidebar {
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
   }
 }
