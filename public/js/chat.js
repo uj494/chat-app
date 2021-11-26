@@ -70,7 +70,7 @@ socket.on('locationMessage', (url) => {
 })
 
 
-messageForm.addEventListener('submit', (e) => {
+$('#message-form').on('submit', function (e) {
     e.preventDefault()
     messageFormButton.setAttribute('disabled', 'disabled')
     const message = e.target.elements.text.value
