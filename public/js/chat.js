@@ -69,21 +69,6 @@ socket.on('locationMessage', (url) => {
     autoScroll()
 })
 
-$('#send').on('click', function (e) {
-    e.preventDefault()
-    const message = $('#text').val()
-    console.log(message)
-    if(message != '') {
-        socket.emit('sendMessage', message, (message) => {
-
-            // messageFormButton.removeAttribute('disabled')
-            messageFormInput.value = ''
-            messageFormInput.focus()
-            console.log(message)
-        })
-    }
-})
-
 
 messageForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -92,7 +77,7 @@ messageForm.addEventListener('submit', (e) => {
     
     socket.emit('sendMessage', message, (message) => {
 
-        // messageFormButton.removeAttribute('disabled')
+        //messageFormButton.removeAttribute('disabled')
         messageFormInput.value = ''
         messageFormInput.focus()
         console.log(message)
