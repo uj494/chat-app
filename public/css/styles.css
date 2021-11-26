@@ -195,7 +195,6 @@ button:disabled {
   flex-shrink: 0;
   margin-top: 16px;
   padding: 24px;
-  margin-bottom: 30px;
 }
 
 .compose form {
@@ -283,5 +282,8 @@ button:disabled {
   }
   #sidebarCollapse.active span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
+  }
+  .compose {
+    margin-bottom: 50px;
   }
 }
