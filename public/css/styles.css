@@ -208,6 +208,16 @@ button:disabled {
   text-decoration: none;
 }
 
+.user_message a {
+  color: #f5e3e1;
+  text-decoration: none;
+}
+
+.user_message a:hover {
+  color: darkblue;
+  text-decoration: none;
+}
+
 /* Message Composition Styles */
 
 .compose {
