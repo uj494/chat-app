@@ -85,19 +85,19 @@ $('#send').on('click', function (e) {
 })
 
 
-// messageForm.addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     // messageFormButton.setAttribute('disabled', 'disabled')
-//     const message = e.target.elements.text.value
+messageForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    // messageFormButton.setAttribute('disabled', 'disabled')
+    const message = e.target.elements.text.value
     
-//     socket.emit('sendMessage', message, (message) => {
+    socket.emit('sendMessage', message, (message) => {
 
-//         // messageFormButton.removeAttribute('disabled')
-//         messageFormInput.value = ''
-//         messageFormInput.focus()
-//         console.log(message)
-//     })
-// })
+        // messageFormButton.removeAttribute('disabled')
+        messageFormInput.value = ''
+        messageFormInput.focus()
+        console.log(message)
+    })
+})
 
 document.querySelector('#send-location').addEventListener('click', () => {
     if (!navigator.geolocation) {
