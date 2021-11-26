@@ -165,6 +165,8 @@ button:disabled {
   display: block;
   clear: both;
   float: left;
+  inline-size: 250px;
+  overflow-wrap: break-word;
 }
 
 .user_message {
@@ -178,12 +180,16 @@ button:disabled {
   display: block;
   clear: both;
   float: right;
+  inline-size: 250px;
+  overflow-wrap: break-word;
 }
 
 .user_message .message__meta {
   color: white;
   font-size: 12px;
   margin-left: 20px;
+  margin-top: 3px;
+  float: right;
 }
 
 .message__name {
@@ -196,6 +202,8 @@ button:disabled {
   color: #777;
   font-size: 12px;
   margin-left: 20px;
+  margin-top: 3px;
+  float: right;
 }
 
 .message a {
