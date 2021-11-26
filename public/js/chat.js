@@ -70,14 +70,14 @@ socket.on('locationMessage', (url) => {
 })
 
 
-$('#message-form').on('submit', function (e) {
+messageForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    messageFormButton.setAttribute('disabled', 'disabled')
+    // messageFormButton.setAttribute('disabled', 'disabled')
     const message = e.target.elements.text.value
     
     socket.emit('sendMessage', message, (message) => {
 
-        messageFormButton.removeAttribute('disabled')
+        // messageFormButton.removeAttribute('disabled')
         messageFormInput.value = ''
         messageFormInput.focus()
         console.log(message)
