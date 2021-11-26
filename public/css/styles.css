@@ -283,4 +283,7 @@ button:disabled {
   #sidebarCollapse.active span:last-of-type {
     transform: rotate(-45deg) translate(1px, -1px);
   }
+  .chat {
+    height: auto !important;
+  }
 }
