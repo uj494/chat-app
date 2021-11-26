@@ -69,20 +69,35 @@ socket.on('locationMessage', (url) => {
     autoScroll()
 })
 
-
-messageForm.addEventListener('submit', (e) => {
+$('#send').on('click', function (e) {
     e.preventDefault()
-    // messageFormButton.setAttribute('disabled', 'disabled')
-    const message = e.target.elements.text.value
-    
-    socket.emit('sendMessage', message, (message) => {
+    const message = $('#text').val()
+    console.log(message)
+    if(message != '') {
+        socket.emit('sendMessage', message, (message) => {
 
-        // messageFormButton.removeAttribute('disabled')
-        messageFormInput.value = ''
-        messageFormInput.focus()
-        console.log(message)
-    })
+            // messageFormButton.removeAttribute('disabled')
+            messageFormInput.value = ''
+            messageFormInput.focus()
+            console.log(message)
+        })
+    }
 })
+
+
+// messageForm.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     // messageFormButton.setAttribute('disabled', 'disabled')
+//     const message = e.target.elements.text.value
+    
+//     socket.emit('sendMessage', message, (message) => {
+
+//         // messageFormButton.removeAttribute('disabled')
+//         messageFormInput.value = ''
+//         messageFormInput.focus()
+//         console.log(message)
+//     })
+// })
 
 document.querySelector('#send-location').addEventListener('click', () => {
     if (!navigator.geolocation) {
