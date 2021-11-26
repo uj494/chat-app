@@ -286,7 +286,7 @@ button:disabled {
   }
 
   .chat__sidebar {
-    height: 90vh;
+    height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
   }
 }
